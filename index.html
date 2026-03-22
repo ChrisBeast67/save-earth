@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Earth 🌍 - Let's Protect Our Planet!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a5f2a, #2d8a4e, #3cb371);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        header h1 {
+            font-size: 32px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: glow 2s infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px #00ff00; }
+            50% { text-shadow: 0 0 40px #00ff00, 0 0 60px #00ff00; }
+        }
+        
+        .hero p {
+            font-size: 24px;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        
+        .cta-btn {
+            background: #ffd700;
+            color: #1a5f2a;
+            padding: 18px 45px;
+            font-size: 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        
+        .cta-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        /* Facts Grid */
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .fact-card {
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .fact-card .icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .fact-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        
+        .fact-card p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        /* Tips */
+        .tips-list {
+            list-style: none;
+        }
+        
+        .tips-list li {
+            background: rgba(255,255,255,0.15);
+            margin: 15px 0;
+            padding: 20px 30px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .tips-list .icon {
+            font-size: 40px;
+        }
+        
+        .tips-list .text {
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        /* Floating particles */
+        .particle {
+            position: fixed;
+            font-size: 30px;
+            animation: float 10s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating particles -->
+    <div id="particles"></div>
+    
+    <header>
+        <h1>🌍 Save the Earth 🌍</h1>
+    </header>
+    
+    <!-- Hero -->
+    <section class="hero">
+        <h2>🌍 Let's Save Our Planet! 🌍</h2>
+        <p>Every small action matters. Together, we can make a difference for our beautiful Earth!</p>
+        <a href="#facts" class="cta-btn">Learn More!</a>
+    </section>
+    
+    <!-- Facts -->
+    <section class="section" id="facts">
+        <h2>📚 Earth Facts</h2>
+        <div class="facts-grid">
+            <div class="fact-card">
+                <div class="icon">🌡️</div>
+                <h3>Global Warming</h3>
+                <p>Earth's temperature has risen 1.1°C since 1900. We need to keep it below 1.5°C!</p>
+            </div>
+            <div class="fact-card">
+                <div class="icon">🌊</div>
+                <h3>Sea Level Rise</h3>
+                <p>Sea levels are rising 3.4mm per year. Islands and coastal cities are at risk!</p>
+            </div>
+            <div class="fact-card">
+                <div class="icon">🦋</div>
+                <h3>Species Extinction</h3>
+                <p>We're losing 10,000 species per year. 1 million species are at risk of extinction!</p>
+            </div>
+            <div class="fact-card">
+                <div class="icon">🌳</div>
+                <h3>Deforestation</h3>
+                <p>27 football fields of forest are lost every minute. Trees are Earth's lungs!</p>
+            </div>
+            <div class="fact-card">
+                <div class="icon">🧊</div>
+                <h3>Arctic Ice</h3>
+                <p>Arctic sea ice is shrinking 13% per decade. Polar bears need their home!</p>
+            </div>
+            <div class="fact-card">
+                <div class="icon">💨</div>
+                <h3>Air Pollution</h3>
+                <p>90% of people breathe polluted air. Clean air is a basic right!</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tips -->
+    <section class="section" id="tips">
+        <h2>💡 How You Can Help</h2>
+        <ul class="tips-list">
+            <li>
+                <span class="icon">💡</span>
+                <span class="text"><strong>Save Energy</strong> - Turn off lights when leaving a room!</span>
+            </li>
+            <li>
+                <span class="icon">🚿</span>
+                <span class="text"><strong>Save Water</strong> - Take shorter showers!</span>
+            </li>
+            <li>
+                <span class="icon">🛍️</span>
+                <span class="text"><strong>Use Less Plastic</strong> - Bring reusable bags!</span>
+            </li>
+            <li>
+                <span class="icon">🚲</span>
+                <span class="text"><strong>Walk or Bike</strong> - Reduce car emissions!</span>
+            </li>
+            <li>
+                <span class="icon">🌱</span>
+                <span class="text"><strong>Plant Trees</strong> - Trees clean our air!</span>
+            </li>
+            <li>
+                <span class="icon">♻️</span>
+                <span class="text"><strong>Recycle</strong> - Sort your trash properly!</span>
+            </li>
+            <li>
+                <span class="icon">📄</span>
+                <span class="text"><strong>Save Paper</strong> - Use digital documents!</span>
+            </li>
+            <li>
+                <span class="icon">🍎</span>
+                <span class="text"><strong>Eat Local</strong> - Support local farmers!</span>
+            </li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>🌍 Made with ❤️ for Earth 🌍</p>
+        <p>Together we can make a difference!</p>
+    </footer>
+    
+    <script>
+        // Create floating particles
+        const particles = ['🌿', '🍃', '🌱', '🌻', '🦋', '🐝', '🌍', '💚'];
+        const container = document.getElementById('particles');
+        
+        for(let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.innerText = particles[Math.floor(Math.random() * particles.length)];
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            container.appendChild(particle);
+        }
+    </script>
+</body>
+</html>
