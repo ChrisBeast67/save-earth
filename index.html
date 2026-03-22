@@ -3,577 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save the Earth 🌍 - Let's Protect Our Planet!</title>
+    <title>Save the Earth 🌍</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #1a5f2a, #2d8a4e); min-height: 100vh; color: white; }
         
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #1a5f2a, #2d8a4e, #3cb371);
-            min-height: 100vh;
-            color: white;
-        }
+        header { background: rgba(0,0,0,0.7); padding: 15px; text-align: center; position: fixed; width: 100%; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        nav a { color: white; text-decoration: none; font-size: 16px; padding: 8px 15px; border-radius: 15px; }
+        nav a:hover { background: rgba(255,255,255,0.2); }
         
-        /* Header */
-        header {
-            background: rgba(0,0,0,0.7);
-            padding: 15px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-        }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 80px 20px; }
+        .hero h2 { font-size: 48px; margin-bottom: 20px; }
+        .hero p { font-size: 22px; max-width: 600px; margin-bottom: 25px; }
         
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+        .section { padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
+        .section h2 { font-size: 32px; text-align: center; margin-bottom: 30px; }
         
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-radius: 20px;
-            transition: background 0.3s;
-        }
+        .facts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .fact-card { background: rgba(255,255,255,0.15); border-radius: 15px; padding: 25px; text-align: center; }
+        .fact-card .icon { font-size: 50px; margin-bottom: 10px; }
+        .fact-card h3 { font-size: 20px; margin-bottom: 8px; color: #ffd700; }
         
-        nav a:hover {
-            background: rgba(255,255,255,0.2);
-        }
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+        .tip-card { background: rgba(255,255,255,0.15); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 15px; }
+        .tip-card .icon { font-size: 35px; }
+        .tip-card strong { color: #ffd700; display: block; font-size: 16px; }
         
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 80px 20px 40px;
-        }
-        
-        .hero h2 {
-            font-size: 52px;
-            margin-bottom: 20px;
-            animation: glow 2s infinite;
-        }
-        
-        @keyframes glow {
-            0%, 100% { text-shadow: 0 0 20px #00ff00; }
-            50% { text-shadow: 0 0 50px #00ff00, 0 0 80px #00ff00; }
-        }
-        
-        .hero p {
-            font-size: 24px;
-            max-width: 700px;
-            margin-bottom: 30px;
-        }
-        
-        .cta-btn {
-            background: #ffd700;
-            color: #1a5f2a;
-            padding: 18px 45px;
-            font-size: 20px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: transform 0.3s;
-        }
-        
-        .cta-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        /* Sections */
-        .section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section h2 {
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        /* Facts */
-        .facts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        
-        .fact-card {
-            background: rgba(255,255,255,0.15);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s;
-        }
-        
-        .fact-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .fact-card .icon {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-        
-        .fact-card h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #ffd700;
-        }
-        
-        /* Tips */
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .tip-card {
-            background: rgba(255,255,255,0.15);
-            border-radius: 15px;
-            padding: 25px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .tip-card .icon {
-            font-size: 45px;
-        }
-        
-        .tip-card .text strong {
-            color: #ffd700;
-            font-size: 18px;
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        /* Games Section */
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        
-        .game-card {
-            background: rgba(255,255,255,0.15);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        
-        .game-card:hover {
-            transform: scale(1.05);
-        }
-        
-        .game-card .icon {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-        
-        .game-card h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        
-        .game-area {
-            display: none;
-            background: #1a1a2e;
-            border-radius: 20px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        .game-area.active {
-            display: block;
-        }
-        
-        .game-area canvas {
-            border-radius: 10px;
-            max-width: 100%;
-        }
-        
-        .close-game {
-            background: #e74c3c;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 20px;
-            cursor: pointer;
-            margin-top: 15px;
-        }
+        /* Game */
+        #gameSection { text-align: center; }
+        #gameCanvas { background: #1a1a2a; border-radius: 10px; cursor: pointer; margin: 15px auto; display: block; }
+        .game-info { font-size: 24px; margin: 10px 0; }
+        .game-btn { background: #ffd700; color: #1a5f2a; padding: 15px 35px; font-size: 18px; border: none; border-radius: 25px; cursor: pointer; margin: 10px; font-weight: bold; }
+        .game-btn:hover { transform: scale(1.05); }
         
         /* Ocean */
-        .ocean-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        
-        .ocean-card {
-            background: linear-gradient(135deg, #0077b6, #00b4d8);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .ocean-card .icon {
-            font-size: 60px;
-            margin-bottom: 15px;
-        }
-        
-        .ocean-card h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
+        .ocean-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .ocean-card { background: linear-gradient(135deg, #0077b6, #00b4d8); border-radius: 15px; padding: 25px; text-align: center; }
+        .ocean-card .icon { font-size: 50px; margin-bottom: 10px; }
         
         /* Plant */
-        .plant-section {
-            text-align: center;
-        }
+        .plant-section { text-align: center; }
+        .tree-counter { font-size: 48px; margin: 15px 0; }
+        .plant-btn { background: #2ecc71; color: white; padding: 18px 40px; font-size: 20px; border: none; border-radius: 25px; cursor: pointer; margin: 10px; }
+        .plant-btn:hover { transform: scale(1.05); }
         
-        .plant-btn {
-            background: #2ecc71;
-            color: white;
-            padding: 20px 50px;
-            font-size: 24px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            margin: 20px;
-            transition: transform 0.3s;
-        }
+        footer { background: rgba(0,0,0,0.7); padding: 25px; text-align: center; margin-top: 40px; }
         
-        .plant-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        .tree-counter {
-            font-size: 48px;
-            margin: 20px 0;
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(0,0,0,0.7);
-            padding: 30px;
-            text-align: center;
-            margin-top: 50px;
-        }
-        
-        /* Particles */
-        .particle {
-            position: fixed;
-            font-size: 30px;
-            animation: float 10s linear infinite;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
-        }
+        .particle { position: fixed; font-size: 25px; animation: float 12s linear infinite; pointer-events: none; z-index: 1; }
+        @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(-100px) rotate(360deg); opacity: 0; } }
     </style>
 </head>
 <body>
-    <!-- Particles -->
     <div id="particles"></div>
     
     <header>
         <nav>
-            <a href="#home">🏠 Home</a>
-            <a href="#facts">📚 Facts</a>
-            <a href="#tips">💡 Tips</a>
-            <a href="#games">🎮 Games</a>
-            <a href="#ocean">🌊 Ocean</a>
-            <a href="#plant">🌱 Plant</a>
+            <a href="#home">🏠</a>
+            <a href="#facts">📚</a>
+            <a href="#tips">💡</a>
+            <a href="#game">🎮</a>
+            <a href="#ocean">🌊</a>
+            <a href="#plant">🌱</a>
         </nav>
     </header>
     
-    <!-- Hero -->
     <section class="hero" id="home">
         <h2>🌍 Save the Earth! 🌍</h2>
-        <p>Every small action matters. Together, we can make a difference for our beautiful planet!</p>
-        <a href="#facts" class="cta-btn">Start Learning!</a>
+        <p>Every small action matters. Together, we can make a difference!</p>
     </section>
     
-    <!-- Facts -->
     <section class="section" id="facts">
         <h2>📚 Earth Facts</h2>
         <div class="facts-grid">
-            <div class="fact-card">
-                <div class="icon">🌡️</div>
-                <h3>Global Warming</h3>
-                <p>Earth's temperature risen 1.1°C since 1900. Keep below 1.5°C!</p>
-            </div>
-            <div class="fact-card">
-                <div class="icon">🌊</div>
-                <h3>Sea Level Rise</h3>
-                <p>Rising 3.4mm per year. Coastal cities at risk!</p>
-            </div>
-            <div class="fact-card">
-                <div class="icon">🦋</div>
-                <h3>Species Extinction</h3>
-                <p>10,000 species lost per year. 1 million at risk!</p>
-            </div>
-            <div class="fact-card">
-                <div class="icon">🌳</div>
-                <h3>Deforestation</h3>
-                <p>27 football fields lost every minute. Trees are Earth's lungs!</p>
-            </div>
-            <div class="fact-card">
-                <div class="icon">🧊</div>
-                <h3>Arctic Ice</h3>
-                <p>Shrinking 13% per decade. Polar bears need their home!</p>
-            </div>
-            <div class="fact-card">
-                <div class="icon">💨</div>
-                <h3>Air Pollution</h3>
-                <p>90% of people breathe polluted air!</p>
-            </div>
+            <div class="fact-card"><div class="icon">🌡️</div><h3>Global Warming</h3><p>Earth's temp risen 1.1°C since 1900!</p></div>
+            <div class="fact-card"><div class="icon">🌊</div><h3>Sea Level</h3><p>Rising 3.4mm per year!</p></div>
+            <div class="fact-card"><div class="icon">🦋</div><h3>Species Lost</h3><p>10,000 species lost per year!</p></div>
+            <div class="fact-card"><div class="icon">🌳</div><h3>Deforestation</h3><p>27 football fields lost per minute!</p></div>
+            <div class="fact-card"><div class="icon">🧊</div><h3>Arctic Ice</h3><p>Shrinking 13% per decade!</p></div>
+            <div class="fact-card"><div class="icon">💨</div><h3>Air Pollution</h3><p>90% breathe polluted air!</p></div>
         </div>
     </section>
     
-    <!-- Tips -->
     <section class="section" id="tips">
         <h2>💡 How You Can Help</h2>
         <div class="tips-grid">
-            <div class="tip-card">
-                <div class="icon">💡</div>
-                <div class="text"><strong>Save Energy</strong>Turn off lights when leaving!</div>
-            </div>
-            <div class="tip-card">
-                <div class="icon">🚿</div>
-                <div class="text"><strong>Save Water</strong>Take shorter showers!</div>
-            </div>
-            <div class="tip-card">
-                <div class="icon">🛍️</div>
-                <div class="text"><strong>Less Plastic</strong>Use reusable bags!</div>
-            </div>
-            <div class="tip-card">
-                <div class="icon">🚲</div>
-                <div class="text"><strong>Walk or Bike</strong>Reduce car emissions!</div>
-            </div>
-            <div class="tip-card">
-                <div class="icon">🌱</div>
-                <div class="text"><strong>Plant Trees</strong>Trees clean our air!</div>
-            </div>
-            <div class="tip-card">
-                <div class="icon">♻️</div>
-                <div class="text"><strong>Recycle</strong>Sort your trash!</div>
-            </div>
-            <div class="tip-card">
-                <div class="icon">📄</div>
-                <div class="text"><strong>Save Paper</strong>Use digital documents!</div>
-            </div>
-            <div class="tip-card">
-                <div class="icon">🍎</div>
-                <div class="text"><strong>Eat Local</strong>Support local farmers!</div>
-            </div>
+            <div class="tip-card"><div class="icon">💡</div><div><strong>Save Energy</strong>Turn off lights!</div></div>
+            <div class="tip-card"><div class="icon">🚿</div><div><strong>Save Water</strong>Short showers!</div></div>
+            <div class="tip-card"><div class="icon">🛍️</div><div><strong>Less Plastic</strong>Reusable bags!</div></div>
+            <div class="tip-card"><div class="icon">🚲</div><div><strong>Walk or Bike</strong>Less cars!</div></div>
+            <div class="tip-card"><div class="icon">🌱</div><div><strong>Plant Trees</strong>Clean air!</div></div>
+            <div class="tip-card"><div class="icon">♻️</div><div><strong>Recycle</strong>Sort trash!</div></div>
         </div>
     </section>
     
-    <!-- Games -->
-    <section class="section" id="games">
-        <h2>🎮 Play to Learn!</h2>
-        <div class="games-grid">
-            <div class="game-card" onclick="startGame('trash')">
-                <div class="icon">🗑️</div>
-                <h3>Trash Sort</h3>
-                <p>Sort recyclables!</p>
-            </div>
-            <div class="game-card" onclick="startGame('tree')">
-                <div class="icon">🌲</div>
-                <h3>Plant Trees</h3>
-                <p>Plant and grow!</p>
-            </div>
-            <div class="game-card" onclick="startGame('ocean')">
-                <div class="icon">🐠</div>
-                <h3>Ocean Clean</h3>
-                <p>Clean the ocean!</p>
-            </div>
-            <div class="game-card" onclick="startGame('energy')">
-                <div class="icon">⚡</div>
-                <h3>Energy Save</h3>
-                <p>Save energy!</p>
-            </div>
-        </div>
-        
-        <!-- Trash Sort Game -->
-        <div class="game-area" id="trashGame">
-            <h3>🗑️ Trash Sorting Game</h3>
-            <p>Click on trash to clean it up! Get points!</p>
-            <canvas id="trashCanvas" width="500" height="400"></canvas>
-            <p>Score: <span id="trashScore">0</span></p>
-            <button class="close-game" onclick="stopGame('trash')">Stop</button>
-        </div>
+    <section class="section" id="game">
+        <h2>🎮 Play: Trash Collector!</h2>
+        <p>Click the falling trash to clean up the Earth!</p>
+        <canvas id="gameCanvas" width="350" height="300"></canvas>
+        <div class="game-info">Score: <span id="score">0</span> | Time: <span id="timer">30</span>s</div>
+        <button class="game-btn" onclick="startGame()">▶️ Start</button>
     </section>
     
-    <!-- Ocean -->
     <section class="section" id="ocean">
         <h2>🌊 Ocean Protection</h2>
-        <div class="ocean-cards">
-            <div class="ocean-card">
-                <div class="icon">🐢</div>
-                <h3>Save Sea Turtles</h3>
-                <p>Sea turtles mistake plastic for food. 1 million die yearly from plastic!</p>
-            </div>
-            <div class="ocean-card">
-                <div class="icon">🧜</div>
-                <h3>Reduce Plastic</h3>
-                <p>8 million tons of plastic enter oceans yearly. Use less plastic!</p>
-            </div>
-            <div class="ocean-card">
-                <div class="icon">🦈</div>
-                <h3>Protect Sharks</h3>
-                <p>Sharks keep ocean ecosystems balanced. They're endangered!</p>
-            </div>
-            <div class="ocean-card">
-                <div class="icon">🏝️</div>
-                <h3>Coral Reefs</h3>
-                <p>Coral reefs support 25% of marine life. They're bleaching!</p>
-            </div>
+        <div class="ocean-grid">
+            <div class="ocean-card"><div class="icon">🐢</div><h3>Save Sea Turtles</h3><p>1 million die yearly from plastic!</p></div>
+            <div class="ocean-card"><div class="icon">🧜</div><h3>Reduce Plastic</h3><p>8 million tons enter oceans!</p></div>
+            <div class="ocean-card"><div class="icon">🦈</div><h3>Protect Sharks</h3><p>Keep ocean balance!</p></div>
+            <div class="ocean-card"><div class="icon">🏝️</div><h3>Coral Reefs</h3><p>25% of sea life needs them!</p></div>
         </div>
     </section>
     
-    <!-- Plant Trees -->
     <section class="section" id="plant">
         <h2>🌱 Plant Trees Campaign</h2>
         <div class="plant-section">
-            <p>One tree produces 260 pounds of oxygen yearly!</p>
+            <p>One tree = 260 pounds oxygen per year!</p>
             <div class="tree-counter">🌲 <span id="treeCount">0</span> 🌲</div>
             <button class="plant-btn" onclick="plantTree()">🌱 Plant a Tree!</button>
-            <p>Together we can reach 1,000,000 trees!</p>
         </div>
     </section>
     
-    <footer>
-        <p>🌍 Made with ❤️ for Earth 🌍</p>
-        <p>Together we can make a difference!</p>
-    </footer>
+    <footer><p>🌍 Made with ❤️ for Earth 🌍</p></footer>
     
     <script>
         // Particles
-        const particles = ['🌿', '🍃', '🌱', '🌻', '🦋', '🐝', '🌍', '💚'];
-        const container = document.getElementById('particles');
-        
-        for(let i = 0; i < 25; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.innerText = particles[Math.floor(Math.random() * particles.length)];
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            particle.style.animationDelay = Math.random() * 10 + 's';
-            container.appendChild(particle);
+        const particles = ['🌿', '🍃', '🌱', '🦋', '🐝', '💚'];
+        for(let i = 0; i < 15; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.innerText = particles[Math.floor(Math.random() * particles.length)];
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDuration = (Math.random() * 8 + 8) + 's';
+            document.getElementById('particles').appendChild(p);
         }
         
         // Tree Counter
-        let trees = 0;
         function plantTree() {
-            trees++;
-            document.getElementById('treeCount').innerText = trees;
+            document.getElementById('treeCount').innerText = parseInt(document.getElementById('treeCount').innerText) + 1;
         }
         
-        // Game System
-        let activeGame = null;
+        // Game
+        let gameRunning = false;
+        let score = 0;
+        let timeLeft = 30;
+        let items = [];
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
         
-        function startGame(game) {
-            document.querySelectorAll('.game-area').forEach(g => g.classList.remove('active'));
-            document.getElementById(game + 'Game').classList.add('active');
-            activeGame = game;
+        function startGame() {
+            gameRunning = true;
+            score = 0;
+            timeLeft = 30;
+            items = [];
+            document.getElementById('score').innerText = '0';
+            document.getElementById('timer').innerText = '30';
             
-            if(game === 'trash') startTrashGame();
+            // Add initial items
+            for(let i = 0; i < 5; i++) addItem();
+            
+            gameLoop();
+            timerLoop();
         }
         
-        function stopGame(game) {
-            document.getElementById(game + 'Game').classList.remove('active');
-            activeGame = null;
+        function addItem() {
+            items.push({
+                x: Math.random() * 300,
+                y: -30,
+                speed: 2 + Math.random() * 3,
+                icon: ['🧴', '🥤', '📰', '🥡', '🛍️'][Math.floor(Math.random() * 5)]
+            });
         }
         
-        // Trash Game
-        let trashRunning = false;
-        let trashScore = 0;
-        let trashItems = [];
+        function gameLoop() {
+            if(!gameRunning) return;
+            
+            ctx.fillStyle = '#1a1a2a';
+            ctx.fillRect(0, 0, 350, 300);
+            
+            items.forEach((item, i) => {
+                item.y += item.speed;
+                ctx.font = '30px Arial';
+                ctx.fillText(item.icon, item.x, item.y + 25);
+                
+                if(item.y > 320) items.splice(i, 1);
+            });
+            
+            if(Math.random() < 0.03) addItem();
+            if(items.length < 5) addItem();
+            
+            requestAnimationFrame(gameLoop);
+        }
         
-        function startTrashGame() {
-            trashRunning = true;
-            trashScore = 0;
-            document.getElementById('trashScore').innerText = '0';
-            trashItems = [];
-            
-            const canvas = document.getElementById('trashCanvas');
-            const ctx = canvas.getContext('2d');
-            
-            for(let i = 0; i < 8; i++) {
-                trashItems.push({
-                    x: Math.random() * 450,
-                    y: Math.random() * 350,
-                    type: ['🧴', '🥤', '📰', '🥡'][Math.floor(Math.random() * 4)]
-                });
+        function timerLoop() {
+            if(!gameRunning) return;
+            timeLeft--;
+            document.getElementById('timer').innerText = timeLeft;
+            if(timeLeft <= 0) {
+                gameRunning = false;
+                alert('Game Over! Score: ' + score);
+            } else {
+                setTimeout(timerLoop, 1000);
             }
+        }
+        
+        canvas.onclick = function(e) {
+            if(!gameRunning) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
             
-            function draw() {
-                if(!trashRunning) return;
-                
-                ctx.fillStyle = '#1a1a2e';
-                ctx.fillRect(0, 0, 500, 400);
-                
-                trashItems.forEach(item => {
-                    ctx.font = '35px Arial';
-                    ctx.fillText(item.type, item.x, item.y + 30);
-                });
-                
-                requestAnimationFrame(draw);
-            }
-            draw();
-            
-            canvas.onclick = function(e) {
-                const rect = canvas.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                trashItems = trashItems.filter(item => {
-                    const dist = Math.sqrt((x - item.x) ** 2 + (y - item.y) ** 2);
-                    if(dist < 30) {
-                        trashScore += 10;
-                        document.getElementById('trashScore').innerText = trashScore;
-                        return false;
-                    }
-                    return true;
-                });
-                
-                if(trashItems.length === 0) {
-                    alert('You cleaned up all the trash! Score: ' + trashScore);
-                    trashItems = [];
-                    for(let i = 0; i < 8; i++) {
-                        trashItems.push({
-                            x: Math.random() * 450,
-                            y: Math.random() * 350,
-                            type: ['🧴', '🥤', '📰', '🥡'][Math.floor(Math.random() * 4)]
-                        });
-                    }
+            items = items.filter(item => {
+                const dist = Math.sqrt((x - item.x) ** 2 + (y - item.y - 15) ** 2);
+                if(dist < 30) {
+                    score += 10;
+                    document.getElementById('score').innerText = score;
+                    return false;
                 }
-            };
-        }
+                return true;
+            });
+        };
     </script>
 </body>
 </html>
