@@ -20,8 +20,8 @@
         
         /* Header */
         header {
-            background: rgba(0,0,0,0.5);
-            padding: 20px;
+            background: rgba(0,0,0,0.7);
+            padding: 15px;
             text-align: center;
             position: fixed;
             width: 100%;
@@ -29,36 +29,51 @@
             z-index: 100;
         }
         
-        header h1 {
-            font-size: 32px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
         }
         
         /* Hero */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            padding: 80px 20px 40px;
         }
         
         .hero h2 {
-            font-size: 48px;
+            font-size: 52px;
             margin-bottom: 20px;
             animation: glow 2s infinite;
         }
         
         @keyframes glow {
             0%, 100% { text-shadow: 0 0 20px #00ff00; }
-            50% { text-shadow: 0 0 40px #00ff00, 0 0 60px #00ff00; }
+            50% { text-shadow: 0 0 50px #00ff00, 0 0 80px #00ff00; }
         }
         
         .hero p {
             font-size: 24px;
-            max-width: 600px;
+            max-width: 700px;
             margin-bottom: 30px;
         }
         
@@ -70,7 +85,6 @@
             border: none;
             border-radius: 30px;
             cursor: pointer;
-            text-decoration: none;
             font-weight: bold;
             transition: transform 0.3s;
         }
@@ -92,7 +106,7 @@
             margin-bottom: 40px;
         }
         
-        /* Facts Grid */
+        /* Facts */
         .facts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -105,6 +119,11 @@
             padding: 30px;
             text-align: center;
             backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+        
+        .fact-card:hover {
+            transform: translateY(-10px);
         }
         
         .fact-card .icon {
@@ -118,43 +137,149 @@
             color: #ffd700;
         }
         
-        .fact-card p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        
         /* Tips */
-        .tips-list {
-            list-style: none;
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
         
-        .tips-list li {
+        .tip-card {
             background: rgba(255,255,255,0.15);
-            margin: 15px 0;
-            padding: 20px 30px;
             border-radius: 15px;
+            padding: 25px;
             display: flex;
             align-items: center;
             gap: 20px;
         }
         
-        .tips-list .icon {
-            font-size: 40px;
+        .tip-card .icon {
+            font-size: 45px;
         }
         
-        .tips-list .text {
+        .tip-card .text strong {
+            color: #ffd700;
             font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* Games Section */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .game-card {
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .game-card .icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .game-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .game-area {
+            display: none;
+            background: #1a1a2e;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .game-area.active {
+            display: block;
+        }
+        
+        .game-area canvas {
+            border-radius: 10px;
+            max-width: 100%;
+        }
+        
+        .close-game {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        
+        /* Ocean */
+        .ocean-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .ocean-card {
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .ocean-card .icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .ocean-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        /* Plant */
+        .plant-section {
+            text-align: center;
+        }
+        
+        .plant-btn {
+            background: #2ecc71;
+            color: white;
+            padding: 20px 50px;
+            font-size: 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .plant-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .tree-counter {
+            font-size: 48px;
+            margin: 20px 0;
         }
         
         /* Footer */
         footer {
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.7);
             padding: 30px;
             text-align: center;
             margin-top: 50px;
         }
         
-        /* Floating particles */
+        /* Particles */
         .particle {
             position: fixed;
             font-size: 30px;
@@ -170,18 +295,25 @@
     </style>
 </head>
 <body>
-    <!-- Floating particles -->
+    <!-- Particles -->
     <div id="particles"></div>
     
     <header>
-        <h1>🌍 Save the Earth 🌍</h1>
+        <nav>
+            <a href="#home">🏠 Home</a>
+            <a href="#facts">📚 Facts</a>
+            <a href="#tips">💡 Tips</a>
+            <a href="#games">🎮 Games</a>
+            <a href="#ocean">🌊 Ocean</a>
+            <a href="#plant">🌱 Plant</a>
+        </nav>
     </header>
     
     <!-- Hero -->
-    <section class="hero">
-        <h2>🌍 Let's Save Our Planet! 🌍</h2>
-        <p>Every small action matters. Together, we can make a difference for our beautiful Earth!</p>
-        <a href="#facts" class="cta-btn">Learn More!</a>
+    <section class="hero" id="home">
+        <h2>🌍 Save the Earth! 🌍</h2>
+        <p>Every small action matters. Together, we can make a difference for our beautiful planet!</p>
+        <a href="#facts" class="cta-btn">Start Learning!</a>
     </section>
     
     <!-- Facts -->
@@ -191,32 +323,32 @@
             <div class="fact-card">
                 <div class="icon">🌡️</div>
                 <h3>Global Warming</h3>
-                <p>Earth's temperature has risen 1.1°C since 1900. We need to keep it below 1.5°C!</p>
+                <p>Earth's temperature risen 1.1°C since 1900. Keep below 1.5°C!</p>
             </div>
             <div class="fact-card">
                 <div class="icon">🌊</div>
                 <h3>Sea Level Rise</h3>
-                <p>Sea levels are rising 3.4mm per year. Islands and coastal cities are at risk!</p>
+                <p>Rising 3.4mm per year. Coastal cities at risk!</p>
             </div>
             <div class="fact-card">
                 <div class="icon">🦋</div>
                 <h3>Species Extinction</h3>
-                <p>We're losing 10,000 species per year. 1 million species are at risk of extinction!</p>
+                <p>10,000 species lost per year. 1 million at risk!</p>
             </div>
             <div class="fact-card">
                 <div class="icon">🌳</div>
                 <h3>Deforestation</h3>
-                <p>27 football fields of forest are lost every minute. Trees are Earth's lungs!</p>
+                <p>27 football fields lost every minute. Trees are Earth's lungs!</p>
             </div>
             <div class="fact-card">
                 <div class="icon">🧊</div>
                 <h3>Arctic Ice</h3>
-                <p>Arctic sea ice is shrinking 13% per decade. Polar bears need their home!</p>
+                <p>Shrinking 13% per decade. Polar bears need their home!</p>
             </div>
             <div class="fact-card">
                 <div class="icon">💨</div>
                 <h3>Air Pollution</h3>
-                <p>90% of people breathe polluted air. Clean air is a basic right!</p>
+                <p>90% of people breathe polluted air!</p>
             </div>
         </div>
     </section>
@@ -224,40 +356,114 @@
     <!-- Tips -->
     <section class="section" id="tips">
         <h2>💡 How You Can Help</h2>
-        <ul class="tips-list">
-            <li>
-                <span class="icon">💡</span>
-                <span class="text"><strong>Save Energy</strong> - Turn off lights when leaving a room!</span>
-            </li>
-            <li>
-                <span class="icon">🚿</span>
-                <span class="text"><strong>Save Water</strong> - Take shorter showers!</span>
-            </li>
-            <li>
-                <span class="icon">🛍️</span>
-                <span class="text"><strong>Use Less Plastic</strong> - Bring reusable bags!</span>
-            </li>
-            <li>
-                <span class="icon">🚲</span>
-                <span class="text"><strong>Walk or Bike</strong> - Reduce car emissions!</span>
-            </li>
-            <li>
-                <span class="icon">🌱</span>
-                <span class="text"><strong>Plant Trees</strong> - Trees clean our air!</span>
-            </li>
-            <li>
-                <span class="icon">♻️</span>
-                <span class="text"><strong>Recycle</strong> - Sort your trash properly!</span>
-            </li>
-            <li>
-                <span class="icon">📄</span>
-                <span class="text"><strong>Save Paper</strong> - Use digital documents!</span>
-            </li>
-            <li>
-                <span class="icon">🍎</span>
-                <span class="text"><strong>Eat Local</strong> - Support local farmers!</span>
-            </li>
-        </ul>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <div class="icon">💡</div>
+                <div class="text"><strong>Save Energy</strong>Turn off lights when leaving!</div>
+            </div>
+            <div class="tip-card">
+                <div class="icon">🚿</div>
+                <div class="text"><strong>Save Water</strong>Take shorter showers!</div>
+            </div>
+            <div class="tip-card">
+                <div class="icon">🛍️</div>
+                <div class="text"><strong>Less Plastic</strong>Use reusable bags!</div>
+            </div>
+            <div class="tip-card">
+                <div class="icon">🚲</div>
+                <div class="text"><strong>Walk or Bike</strong>Reduce car emissions!</div>
+            </div>
+            <div class="tip-card">
+                <div class="icon">🌱</div>
+                <div class="text"><strong>Plant Trees</strong>Trees clean our air!</div>
+            </div>
+            <div class="tip-card">
+                <div class="icon">♻️</div>
+                <div class="text"><strong>Recycle</strong>Sort your trash!</div>
+            </div>
+            <div class="tip-card">
+                <div class="icon">📄</div>
+                <div class="text"><strong>Save Paper</strong>Use digital documents!</div>
+            </div>
+            <div class="tip-card">
+                <div class="icon">🍎</div>
+                <div class="text"><strong>Eat Local</strong>Support local farmers!</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Games -->
+    <section class="section" id="games">
+        <h2>🎮 Play to Learn!</h2>
+        <div class="games-grid">
+            <div class="game-card" onclick="startGame('trash')">
+                <div class="icon">🗑️</div>
+                <h3>Trash Sort</h3>
+                <p>Sort recyclables!</p>
+            </div>
+            <div class="game-card" onclick="startGame('tree')">
+                <div class="icon">🌲</div>
+                <h3>Plant Trees</h3>
+                <p>Plant and grow!</p>
+            </div>
+            <div class="game-card" onclick="startGame('ocean')">
+                <div class="icon">🐠</div>
+                <h3>Ocean Clean</h3>
+                <p>Clean the ocean!</p>
+            </div>
+            <div class="game-card" onclick="startGame('energy')">
+                <div class="icon">⚡</div>
+                <h3>Energy Save</h3>
+                <p>Save energy!</p>
+            </div>
+        </div>
+        
+        <!-- Trash Sort Game -->
+        <div class="game-area" id="trashGame">
+            <h3>🗑️ Trash Sorting Game</h3>
+            <p>Click on trash to clean it up! Get points!</p>
+            <canvas id="trashCanvas" width="500" height="400"></canvas>
+            <p>Score: <span id="trashScore">0</span></p>
+            <button class="close-game" onclick="stopGame('trash')">Stop</button>
+        </div>
+    </section>
+    
+    <!-- Ocean -->
+    <section class="section" id="ocean">
+        <h2>🌊 Ocean Protection</h2>
+        <div class="ocean-cards">
+            <div class="ocean-card">
+                <div class="icon">🐢</div>
+                <h3>Save Sea Turtles</h3>
+                <p>Sea turtles mistake plastic for food. 1 million die yearly from plastic!</p>
+            </div>
+            <div class="ocean-card">
+                <div class="icon">🧜</div>
+                <h3>Reduce Plastic</h3>
+                <p>8 million tons of plastic enter oceans yearly. Use less plastic!</p>
+            </div>
+            <div class="ocean-card">
+                <div class="icon">🦈</div>
+                <h3>Protect Sharks</h3>
+                <p>Sharks keep ocean ecosystems balanced. They're endangered!</p>
+            </div>
+            <div class="ocean-card">
+                <div class="icon">🏝️</div>
+                <h3>Coral Reefs</h3>
+                <p>Coral reefs support 25% of marine life. They're bleaching!</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Plant Trees -->
+    <section class="section" id="plant">
+        <h2>🌱 Plant Trees Campaign</h2>
+        <div class="plant-section">
+            <p>One tree produces 260 pounds of oxygen yearly!</p>
+            <div class="tree-counter">🌲 <span id="treeCount">0</span> 🌲</div>
+            <button class="plant-btn" onclick="plantTree()">🌱 Plant a Tree!</button>
+            <p>Together we can reach 1,000,000 trees!</p>
+        </div>
     </section>
     
     <footer>
@@ -266,11 +472,11 @@
     </footer>
     
     <script>
-        // Create floating particles
+        // Particles
         const particles = ['🌿', '🍃', '🌱', '🌻', '🦋', '🐝', '🌍', '💚'];
         const container = document.getElementById('particles');
         
-        for(let i = 0; i < 20; i++) {
+        for(let i = 0; i < 25; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
             particle.innerText = particles[Math.floor(Math.random() * particles.length)];
@@ -278,6 +484,95 @@
             particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
             particle.style.animationDelay = Math.random() * 10 + 's';
             container.appendChild(particle);
+        }
+        
+        // Tree Counter
+        let trees = 0;
+        function plantTree() {
+            trees++;
+            document.getElementById('treeCount').innerText = trees;
+        }
+        
+        // Game System
+        let activeGame = null;
+        
+        function startGame(game) {
+            document.querySelectorAll('.game-area').forEach(g => g.classList.remove('active'));
+            document.getElementById(game + 'Game').classList.add('active');
+            activeGame = game;
+            
+            if(game === 'trash') startTrashGame();
+        }
+        
+        function stopGame(game) {
+            document.getElementById(game + 'Game').classList.remove('active');
+            activeGame = null;
+        }
+        
+        // Trash Game
+        let trashRunning = false;
+        let trashScore = 0;
+        let trashItems = [];
+        
+        function startTrashGame() {
+            trashRunning = true;
+            trashScore = 0;
+            document.getElementById('trashScore').innerText = '0';
+            trashItems = [];
+            
+            const canvas = document.getElementById('trashCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            for(let i = 0; i < 8; i++) {
+                trashItems.push({
+                    x: Math.random() * 450,
+                    y: Math.random() * 350,
+                    type: ['🧴', '🥤', '📰', '🥡'][Math.floor(Math.random() * 4)]
+                });
+            }
+            
+            function draw() {
+                if(!trashRunning) return;
+                
+                ctx.fillStyle = '#1a1a2e';
+                ctx.fillRect(0, 0, 500, 400);
+                
+                trashItems.forEach(item => {
+                    ctx.font = '35px Arial';
+                    ctx.fillText(item.type, item.x, item.y + 30);
+                });
+                
+                requestAnimationFrame(draw);
+            }
+            draw();
+            
+            canvas.onclick = function(e) {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                trashItems = trashItems.filter(item => {
+                    const dist = Math.sqrt((x - item.x) ** 2 + (y - item.y) ** 2);
+                    if(dist < 30) {
+                        trashScore += 10;
+                        document.getElementById('trashScore').innerText = trashScore;
+                        return false;
+                    }
+                    return true;
+                });
+                
+                if(trashItems.length === 0) {
+                    alert('You cleaned up all the trash! Score: ' + trashScore);
+                    trashItems = [];
+                    for(let i = 0; i < 8; i++) {
+                        trashItems.push({
+                            x: Math.random() * 450,
+                            y: Math.random() * 350,
+                            type: ['🧴', '🥤', '📰', '🥡'][Math.floor(Math.random() * 4)]
+                        });
+                    }
+                }
+            };
         }
     </script>
 </body>
