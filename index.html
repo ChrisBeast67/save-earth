@@ -6,65 +6,73 @@
     <title>Save the Earth 🌍 - Together We Can!</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(180deg, #1a5f2a 0%, #0d3d1a 100%); min-height: 100vh; color: white; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(180deg, #1a5f2a 0%, #0a2510 100%); min-height: 100vh; color: white; }
         
-        header { background: rgba(0,0,0,0.85); padding: 8px; text-align: center; position: fixed; width: 100%; top: 0; z-index: 100; }
-        nav { display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; }
-        nav a { color: white; text-decoration: none; font-size: 11px; padding: 4px 6px; border-radius: 6px; }
-        nav a:hover { background: rgba(255,255,255,0.2); }
+        header { background: rgba(0,0,0,0.9); padding: 8px; text-align: center; position: fixed; width: 100%; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        nav { display: flex; justify-content: center; gap: 4px; flex-wrap: wrap; }
+        nav a { color: #aaa; text-decoration: none; font-size: 10px; padding: 4px 5px; border-radius: 5px; }
+        nav a:hover { color: #fff; background: rgba(255,255,255,0.1); }
         
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 45px 12px; }
-        .hero h2 { font-size: 28px; margin-bottom: 8px; animation: glow 2s infinite; }
-        @keyframes glow { 0%, 100% { text-shadow: 0 0 10px #00ff00; } 50% { text-shadow: 0 0 25px #00ff00; } }
-        .hero p { font-size: 14px; max-width: 400px; }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 45px 10px; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%2327ae60" stroke-width="0.5"/><circle cx="50" cy="50" r="30" fill="none" stroke="%2327ae60" stroke-width="0.5"/><circle cx="50" cy="50" r="20" fill="none" stroke="%2327ae60" stroke-width="0.5"/></svg>') center/200px no-repeat; }
+        .hero h2 { font-size: 26px; margin-bottom: 6px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+        .hero p { font-size: 13px; max-width: 350px; color: #ccc; }
         
-        .section { padding: 30px 12px; max-width: 850px; margin: 0 auto; }
-        .section h2 { font-size: 22px; text-align: center; margin-bottom: 15px; }
+        .section { padding: 25px 10px; max-width: 800px; margin: 0 auto; }
+        .section h2 { font-size: 20px; text-align: center; margin-bottom: 12px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; }
-        .card { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 10px; text-align: center; }
-        .card .icon { font-size: 28px; }
-        .card h3 { font-size: 12px; margin: 4px 0; color: #ffd700; }
-        .card p { font-size: 11px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 6px; }
+        .card { background: rgba(255,255,255,0.08); border-radius: 6px; padding: 8px; text-align: center; }
+        .card .icon { font-size: 24px; }
+        .card h3 { font-size: 11px; margin: 4px 0; color: #ffd700; }
+        .card p { font-size: 10px; color: #aaa; }
         
-        .games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-top: 10px; }
-        .game-box { background: #1a1a2a; border-radius: 8px; padding: 8px; text-align: center; }
-        .game-box h3 { color: #ffd700; font-size: 12px; margin-bottom: 4px; }
-        .game-box p { font-size: 10px; margin-bottom: 4px; }
-        .game-box canvas { background: #0a0a15; border-radius: 4px; width: 100%; cursor: pointer; }
+        .games-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin-top: 8px; }
+        .game-box { background: #111; border-radius: 6px; padding: 6px; text-align: center; }
+        .game-box h3 { color: #ffd700; font-size: 11px; }
+        .game-box p { font-size: 9px; margin-bottom: 4px; }
+        .game-box canvas { background: #0a0a0a; border-radius: 3px; width: 100%; cursor: pointer; }
         
-        .game-btn { background: #2ecc71; color: white; padding: 5px 12px; font-size: 11px; border: none; border-radius: 10px; cursor: pointer; }
+        .game-btn { background: #27ae60; color: white; padding: 4px 10px; font-size: 10px; border: none; border-radius: 8px; cursor: pointer; }
         
-        .quiz-box { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 12px; margin: 8px 0; }
-        .quiz-box h3 { font-size: 13px; margin-bottom: 8px; }
-        .quiz-btn { display: block; width: 100%; padding: 8px; margin: 4px 0; background: rgba(255,255,255,0.1); border: none; border-radius: 6px; color: white; cursor: pointer; text-align: left; font-size: 12px; }
+        .quiz-box { background: rgba(255,255,255,0.08); border-radius: 8px; padding: 10px; margin: 6px 0; }
+        .quiz-box h3 { font-size: 12px; margin-bottom: 6px; }
+        .quiz-btn { display: block; width: 100%; padding: 6px; margin: 3px 0; background: rgba(255,255,255,0.1); border: none; border-radius: 4px; color: #ddd; cursor: pointer; text-align: left; font-size: 11px; }
         .quiz-btn:hover { background: rgba(255,255,255,0.2); }
         .quiz-btn.correct { background: #27ae60; }
-        .quiz-btn.wrong { background: #e74c3c; }
+        .quiz-btn.wrong { background: #c0392b; }
         
-        .progress-bar { background: rgba(255,255,255,0.15); border-radius: 15px; height: 20px; margin: 6px 0; overflow: hidden; }
-        .progress-fill { background: linear-gradient(90deg, #27ae60, #2ecc71); height: 100%; border-radius: 15px; transition: width 0.5s; text-align: center; font-size: 10px; line-height: 20px; }
+        .progress-bar { background: rgba(255,255,255,0.1); border-radius: 10px; height: 16px; margin: 5px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #27ae60, #2ecc71); height: 100%; border-radius: 10px; font-size: 9px; line-height: 16px; }
         
-        .pledge-box { background: linear-gradient(135deg, #27ae60, #1e8449); border-radius: 12px; padding: 15px; text-align: center; margin: 10px 0; }
-        .pledge-box h3 { margin-bottom: 10px; }
-        .pledge-btn { background: #ffd700; color: #1a5f2a; padding: 10px 25px; font-size: 14px; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; }
-        .pledge-count { font-size: 24px; margin-top: 10px; }
+        .counter-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+        .counter-box { background: rgba(255,255,255,0.08); border-radius: 8px; padding: 8px; text-align: center; }
+        .counter-box .icon { font-size: 22px; }
+        .counter-box .num { font-size: 20px; font-weight: bold; color: #2ecc71; }
         
-        .counter-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 10px 0; }
-        .counter-box { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 12px; text-align: center; }
-        .counter-box .icon { font-size: 28px; }
-        .counter-box .num { font-size: 24px; font-weight: bold; color: #2ecc71; }
+        .pledge-box { background: linear-gradient(135deg, #27ae60, #1e7a3a); border-radius: 10px; padding: 12px; text-align: center; margin: 8px 0; }
+        .pledge-box h3 { margin-bottom: 8px; }
+        .pledge-btn { background: #ffd700; color: #1a5f2a; padding: 8px 20px; font-size: 12px; border: none; border-radius: 15px; cursor: pointer; font-weight: bold; }
         
-        .share-section { text-align: center; margin: 15px 0; }
-        .share-btn { background: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 20px; cursor: pointer; font-size: 14px; margin: 5px; }
+        .pledge-count { font-size: 18px; margin-top: 8px; }
         
-        footer { background: rgba(0,0,0,0.85); padding: 12px; text-align: center; margin-top: 20px; }
+        .tips-list { list-style: none; }
+        .tips-list li { background: rgba(255,255,255,0.08); margin: 4px 0; padding: 8px 10px; border-radius: 6px; display: flex; align-items: center; gap: 8px; font-size: 12px; }
+        .tips-list .icon { font-size: 18px; }
         
-        .particle { position: fixed; font-size: 16px; animation: float 15s linear infinite; pointer-events: none; z-index: 1; }
-        @keyframes float { 0% { transform: translateY(100vh); opacity: 1; } 100% { transform: translateY(-100px); opacity: 0; } }
+        footer { background: rgba(0,0,0,0.9); padding: 10px; text-align: center; margin-top: 15px; font-size: 11px; color: #888; }
         
-        .emoji-float { position: fixed; font-size: 24px; animation: floatUp 2s ease-out forwards; z-index: 50; pointer-events: none; }
-        @keyframes floatUp { 0% { opacity: 1; transform: translateY(0) scale(1); } 100% { opacity: 0; transform: translateY(-80px) scale(1.3); } }
+        .particle { position: fixed; font-size: 14px; animation: float 20s linear infinite; pointer-events: none; z-index: 0; }
+        @keyframes float { 0% { transform: translateY(100vh); opacity: 0.8; } 100% { transform: translateY(-50px); opacity: 0.3; } }
+        
+        .emoji-float { position: fixed; font-size: 20px; animation: floatUp 1.5s ease-out forwards; z-index: 50; pointer-events: none; }
+        @keyframes floatUp { 0% { opacity: 1; transform: translateY(0) scale(1); } 100% { opacity: 0; transform: translateY(-60px) scale(1.2); } }
+        
+        .daily-tip { background: linear-gradient(135deg, #f39c12, #e67e22); border-radius: 10px; padding: 12px; text-align: center; margin: 8px 0; cursor: pointer; }
+        .daily-tip h3 { margin-bottom: 5px; }
+        
+        .video-section { text-align: center; margin: 10px 0; }
+        .video-placeholder { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 20px; }
     </style>
 </head>
 <body>
@@ -74,6 +82,7 @@
         <nav>
             <a href="#home">🏠</a>
             <a href="#facts">📚</a>
+            <a href="#tip">💡</a>
             <a href="#quiz">❓</a>
             <a href="#games">🎮</a>
             <a href="#goals">🎯</a>
@@ -81,7 +90,6 @@
             <a href="#counters">📊</a>
             <a href="#ocean">🌊</a>
             <a href="#plant">🌱</a>
-            <a href="#share">📤</a>
         </nav>
     </header>
     
@@ -93,68 +101,63 @@
     <section class="section" id="facts">
         <h2>📚 Earth Facts</h2>
         <div class="grid">
-            <div class="card"><div class="icon">🌡️</div><h3>Global Warming</h3><p>+1.1°C since 1900!</p></div>
-            <div class="card"><div class="icon">🌊</div><h3>Sea Level</h3><p>Rising 3.4mm/year!</p></div>
-            <div class="card"><div class="icon">🦋</div><h3>Species</h3><p>10,000 lost/year!</p></div>
-            <div class="card"><div class="icon">🌳</div><h3>Forest</h3><p>27 fields lost/min!</p></div>
-            <div class="card"><div class="icon">🧊</div><h3>Arctic</h3><p>Shrinking 13%!</p></div>
-            <div class="card"><div class="icon">💨</div><h3>Air</h3><p>90% dirty air!</p></div>
+            <div class="card"><div class="icon">🌡️</div><h3>Warming</h3><p>+1.1°C since 1900!</p></div>
+            <div class="card"><div class="icon">🌊</div><h3>Sea Level</h3><p>+3.4mm/year!</p></div>
+            <div class="card"><div class="icon">🦋</div><h3>Species</h3><p>10K lost/year!</p></div>
+            <div class="card"><div class="icon">🌳</div><h3>Forest</h3><p>27 fields/min!</p></div>
+            <div class="card"><div class="icon">🧊</div><h3>Arctic</h3><p>-13% per decade!</p></div>
+            <div class="card"><div class="icon">💨</div><h3>CO2</h3><p>420+ ppm!</p></div>
+        </div>
+    </section>
+    
+    <section class="section" id="tip">
+        <div class="daily-tip" onclick="newTip()">
+            <h3>💡 Tip of the Day</h3>
+            <p id="tipText">Turn off lights when leaving a room!</p>
         </div>
     </section>
     
     <section class="section" id="quiz">
-        <h2>❓ Earth Quiz</h2>
+        <h2>❓ Quick Quiz</h2>
         <div class="quiz-box">
-            <h3>Q1: Earth water %?</h3>
+            <h3>Q: Earth water %?</h3>
             <button class="quiz-btn" onclick="check(this,false)">A) 50%</button>
             <button class="quiz-btn" onclick="check(this,true)">B) 71%</button>
             <button class="quiz-btn" onclick="check(this,false)">C) 30%</button>
         </div>
         <div class="quiz-box">
-            <h3>Q2: Most oxygen?</h3>
-            <button class="quiz-btn" onclick="check(this,false)">A) Trees</button>
-            <button class="quiz-btn" onclick="check(this,true)">B) Ocean plankton</button>
-            <button class="quiz-btn" onclick="check(this,false)">C) Grass</button>
-        </div>
-        <div class="quiz-box">
-            <h3>Q3: Plastic decompose?</h3>
+            <h3>Q: Plastic takes?</h3>
             <button class="quiz-btn" onclick="check(this,false)">A) 50 years</button>
             <button class="quiz-btn" onclick="check(this,false)">B) 100 years</button>
             <button class="quiz-btn" onclick="check(this,true)">C) 450 years</button>
-        </div>
-        <div class="quiz-box">
-            <h3>Q4: CO2 record high?</h3>
-            <button class="quiz-btn" onclick="check(this,true)">A) 420+ ppm</button>
-            <button class="quiz-btn" onclick="check(this,false)">B) 200 ppm</button>
-            <button class="quiz-btn" onclick="check(this,false)">C) 300 ppm</button>
         </div>
         <p id="quizScore">Score: 0</p>
     </section>
     
     <section class="section" id="games">
-        <h2>🎮 4 Games!</h2>
+        <h2>🎮 Mini Games</h2>
         <div class="games-grid">
             <div class="game-box">
                 <h3>🗑️ Trash</h3>
-                <canvas id="g1" width="110" height="80"></canvas>
+                <canvas id="g1" width="90" height="60"></canvas>
                 <div><span id="s1">0</span></div>
                 <button class="game-btn" onclick="start1()">▶️</button>
             </div>
             <div class="game-box">
                 <h3>🌲 Trees</h3>
-                <canvas id="g2" width="110" height="80"></canvas>
+                <canvas id="g2" width="90" height="60"></canvas>
                 <div><span id="s2">0</span></div>
                 <button class="game-btn" onclick="start2()">▶️</button>
             </div>
             <div class="game-box">
                 <h3>🌊 Ocean</h3>
-                <canvas id="g3" width="110" height="80"></canvas>
+                <canvas id="g3" width="90" height="60"></canvas>
                 <div><span id="s3">0</span></div>
                 <button class="game-btn" onclick="start3()">▶️</button>
             </div>
             <div class="game-box">
                 <h3>⚡ Energy</h3>
-                <canvas id="g4" width="110" height="80"></canvas>
+                <canvas id="g4" width="90" height="60"></canvas>
                 <div><span id="s4">0</span></div>
                 <button class="game-btn" onclick="start4()">▶️</button>
             </div>
@@ -164,144 +167,145 @@
     <section class="section" id="goals">
         <h2>🎯 2030 Goals</h2>
         <div class="card" style="text-align:left;">
-            <p>🌡️ Warming below 1.5°C</p>
+            <p>🌡️ Warming &lt;1.5°C</p>
             <div class="progress-bar"><div class="progress-fill" style="width:45%">45%</div></div>
-            <p>🌳 Plant 1 trillion trees</p>
+            <p>🌳 1 trillion trees</p>
             <div class="progress-bar"><div class="progress-fill" style="width:12%">12%</div></div>
             <p>♻️ Zero ocean plastic</p>
             <div class="progress-bar"><div class="progress-fill" style="width:8%">8%</div></div>
-            <p>💨 Net zero emissions</p>
-            <div class="progress-bar"><div class="progress-fill" style="width:25%">25%</div></div>
         </div>
     </section>
     
     <section class="section" id="pledge">
         <h2>🤝 Take the Pledge</h2>
         <div class="pledge-box">
-            <h3>I pledge to save the Earth!</h3>
+            <h3>I will save the Earth!</h3>
             <button class="pledge-btn" onclick="takePledge()">✅ I Pledge!</button>
-            <div class="pledge-count">🌍 <span id="pledgeCount">0</span> people pledged!</div>
+            <div class="pledge-count">🌍 <span id="pledgeCount">0</span> pledged!</div>
         </div>
     </section>
     
     <section class="section" id="counters">
-        <h2>📊 Earth Stats Today</h2>
+        <h2>📊 Today's Impact</h2>
         <div class="counter-grid">
-            <div class="counter-box"><div class="icon">🌳</div><div class="num" id="treesPlanted">0</div><p>Trees Planted</p></div>
-            <div class="counter-box"><div class="icon">🗑️</div><div class="num" id="trashCollected">0</div><p>Trash Collected</p></div>
-            <div class="counter-box"><div class="icon">💡</div><div class="num" id="energySaved">0</div><p>Energy Saved</p></div>
-            <div class="counter-box"><div class="icon">🌊</div><div class="num" id="oceanCleaned">0</div><p>Ocean Cleaned</p></div>
+            <div class="counter-box"><div class="icon">🌳</div><div class="num" id="trees">0</div><p>Trees</p></div>
+            <div class="counter-box"><div class="icon">🗑️</div><div class="num" id="trash">0</div><p>Trash</p></div>
+            <div class="counter-box"><div class="icon">💡</div><div class="num" id="energy">0</div><p>Energy</p></div>
+            <div class="counter-box"><div class="icon">🌊</div><div class="num" id="ocean">0</div><p>Ocean</p></div>
         </div>
     </section>
     
     <section class="section" id="ocean">
-        <h2>🌊 Ocean Protection</h2>
+        <h2>🌊 Ocean</h2>
         <div class="grid">
-            <div class="card"><div class="icon">🐢</div><h3>Sea Turtles</h3><p>1M die from plastic!</p></div>
-            <div class="card"><div class="icon">🧜</div><h3>Plastic</h3><p>8M tons/year!</p></div>
+            <div class="card"><div class="icon">🐢</div><h3>Sea Turtles</h3><p>1M die/year!</p></div>
+            <div class="card"><div class="icon">🧜</div><h3>Plastic</h3><p>8M tons!</p></div>
             <div class="card"><div class="icon">🦈</div><h3>Sharks</h3><p>Keep balance!</p></div>
-            <div class="card"><div class="icon">🏝️</div><h3>Coral</h3><p>25% sea life!</p></div>
+            <div class="card"><div class="icon">🏝️</div><h3>Coral</h3><p>25% life!</p></div>
         </div>
     </section>
     
     <section class="section" id="plant">
         <h2>🌱 Plant Trees</h2>
         <div class="card" style="text-align:center;">
-            <p>1 tree = 260 lbs oxygen/year!</p>
-            <p style="font-size:32px;margin:10px 0;">🌲 <span id="treeCount">0</span> 🌲</p>
-            <button class="game-btn" style="background:#2ecc71;font-size:13px;padding:8px 20px;" onclick="plantTree()">🌱 Plant</button>
+            <p>1 tree = 260 lbs O2/year!</p>
+            <p style="font:28px;">🌲 <span id="treeCount">0</span> 🌲</p>
+            <button class="game-btn" style="background:#27ae60;padding:8px 18px;font-size:12px;" onclick="plantTree()">🌱 Plant</button>
         </div>
     </section>
     
-    <section class="section" id="share">
-        <h2>📤 Share This Site</h2>
-        <div class="share-section">
-            <p>Help spread the word!</p>
-            <button class="share-btn" onclick="share()">📤 Share</button>
-            <p style="margin-top:10px;font-size:12px;">Copy link: save-earth.vercel.app</p>
-        </div>
+    <section class="section">
+        <h2>💡 Quick Tips</h2>
+        <ul class="tips-list">
+            <li><span class="icon">💡</span> Turn off lights!</li>
+            <li><span class="icon">🚿</span> Short showers!</li>
+            <li><span class="icon">🛍️</span> Reusable bags!</li>
+            <li><span class="icon">🚲</span> Walk or bike!</li>
+            <li><span class="icon">♻️</span> Recycle!</li>
+        </ul>
     </section>
     
     <footer><p>🌍 Made with ❤️ for Earth 🌍 | Together We Can! 💪</p></footer>
     
     <script>
-        // Quiz
+        const tips = ["Turn off lights when leaving!", "Take shorter showers!", "Use reusable bags!", "Walk or bike more!", "Recycle your trash!", "Plant trees!", "Save water!", "Use less plastic!", "Eat local food!", "Unplug devices!"];
+        
+        function newTip() {
+            document.getElementById('tipText').innerText = tips[Math.floor(Math.random() * tips.length)];
+            showEmoji('💡');
+        }
+        
         let quizScore = 0;
         function check(btn, correct) {
-            if(correct) { btn.classList.add('correct'); quizScore++; }
-            else { btn.classList.add('wrong'); }
+            if(correct) { btn.classList.add('correct'); quizScore++; showEmoji('✓'); }
+            else { btn.classList.add('wrong'); showEmoji('✗'); }
             document.getElementById('quizScore').innerText = 'Score: ' + quizScore;
         }
         
-        // Pledge
         let pledgeCount = 0;
-        function takePledge() {
-            pledgeCount++;
-            document.getElementById('pledgeCount').innerText = pledgeCount;
-            showEmoji('✌️');
-        }
+        function takePledge() { pledgeCount++; document.getElementById('pledgeCount').innerText = pledgeCount; showEmoji('✌️'); }
         
-        // Counters
         function plantTree() {
             document.getElementById('treeCount').innerText = parseInt(document.getElementById('treeCount').innerText) + 1;
-            document.getElementById('treesPlanted').innerText = parseInt(document.getElementById('treesPlanted').innerText) + 1;
+            document.getElementById('trees').innerText = parseInt(document.getElementById('trees').innerText) + 1;
             showEmoji('🌲');
         }
         
-        function addTrash() { document.getElementById('trashCollected').innerText = parseInt(document.getElementById('trashCollected').innerText) + 1; }
-        function addEnergy() { document.getElementById('energySaved').innerText = parseInt(document.getElementById('energySaved').innerText) + 1; }
-        function addOcean() { document.getElementById('oceanCleaned').innerText = parseInt(document.getElementById('oceanCleaned').innerText) + 1; }
-        
-        function share() { alert('📤 Share this site: https://chrisbeast67.github.io/save-earth'); showEmoji('📤'); }
+        function addTrash() { document.getElementById('trash').innerText = parseInt(document.getElementById('trash').innerText) + 1; }
+        function addEnergy() { document.getElementById('energy').innerText = parseInt(document.getElementById('energy').innerText) + 1; }
+        function addOcean() { document.getElementById('ocean').innerText = parseInt(document.getElementById('ocean').innerText) + 1; }
         
         function showEmoji(emoji) {
             const el = document.createElement('div');
             el.className = 'emoji-float';
             el.innerText = emoji;
-            el.style.left = Math.random() * 70 + 15 + '%';
-            el.style.top = '40%';
+            el.style.left = Math.random() * 60 + 20 + '%';
+            el.style.top = '30%';
             document.body.appendChild(el);
-            setTimeout(() => el.remove(), 2000);
+            setTimeout(() => el.remove(), 1500);
         }
         
         // Particles
-        const particles = ['🌿', '🍃', '🌱', '🦋'];
-        for(let i = 0; i < 6; i++) {
+        const particles = ['🌿', '🍃', '🌱', '🦋', '💚'];
+        for(let i = 0; i < 5; i++) {
             const p = document.createElement('div');
             p.className = 'particle';
             p.innerText = particles[Math.floor(Math.random() * particles.length)];
             p.style.left = Math.random() * 100 + '%';
-            p.style.animationDuration = (Math.random() * 8 + 8) + 's';
+            p.style.animationDuration = (Math.random() * 10 + 10) + 's';
             document.getElementById('particles').appendChild(p);
         }
         
-        // Games
+        // Game 1
         let g1R=false,g1S=0,g1L=[];
         const c1=document.getElementById('g1'),ct1=c1.getContext('2d');
         function start1(){g1R=true;g1S=0;g1L=[];document.getElementById('s1').innerText='0';loop1();add1();}
-        function add1(){g1L.push({x:Math.random()*80,y:-8,speed:0.8+Math.random()*0.8,icon:'🧴'});}
-        function loop1(){if(!g1R)return;ct1.fillStyle='#0a0a15';ct1.fillRect(0,0,110,80);g1L.forEach((o,i)=>{o.y+=o.speed;ct1.font='14px Arial';ct1.fillText(o.icon,o.x,o.y+12);if(o.y>90)g1L.splice(i,1);});if(Math.random()<0.015)add1();requestAnimationFrame(loop1);}
-        c1.onclick=e=>{if(!g1R)return;const r=c1.getBoundingClientRect();g1L=g1L.filter(o=>{const d=Math.sqrt((e.clientX-r.left-o.x)**2+(e.clientY-r.top-o.y)**2);if(d<12){g1S+=10;document.getElementById('s1').innerText=g1S;addTrash();showEmoji('✓');return false}return true});}
+        function add1(){g1L.push({x:Math.random()*60,y:-5,speed:0.6+Math.random()*0.6,icon:'🧴'});}
+        function loop1(){if(!g1R)return;ct1.fillStyle='#0a0a0a';ct1.fillRect(0,0,90,60);g1L.forEach((o,i)=>{o.y+=o.speed;ct1.font='12px Arial';ct1.fillText(o.icon,o.x,o.y+10);if(o.y>70)g1L.splice(i,1);});if(Math.random()<0.01)add1();requestAnimationFrame(loop1);}
+        c1.onclick=e=>{if(!g1R)return;const r=c1.getBoundingClientRect();g1L=g1L.filter(o=>{const d=Math.sqrt((e.clientX-r.left-o.x)**2+(e.clientY-r.top-o.y)**2);if(d<10){g1S+=10;document.getElementById('s1').innerText=g1S;addTrash();showEmoji('✓');return false}return true});}
         
+        // Game 2
         let g2R=false,g2S=0,g2T=[];
         const c2=document.getElementById('g2'),ct2=c2.getContext('2d');
         function start2(){g2R=true;g2S=0;g2T=[];document.getElementById('s2').innerText='0';loop2();}
-        function loop2(){if(!g2R)return;ct2.fillStyle='#2d8a4e';ct2.fillRect(0,0,110,80);ct2.fillStyle='#8B4513';ct2.fillRect(0,65,110,15);g2T.forEach(t=>{ct2.font='16px Arial';ct2.fillText(t,t.x,t.y);});requestAnimationFrame(loop2);}
+        function loop2(){if(!g2R)return;ct2.fillStyle='#27ae60';ct2.fillRect(0,0,90,60);ct2.fillStyle='#8B4513';ct2.fillRect(0,48,90,12);g2T.forEach(t=>{ct2.font='14px Arial';ct2.fillText(t,t.x,t.y);});requestAnimationFrame(loop2);}
         c2.onclick=e=>{if(!g2R)return;const r=c2.getBoundingClientRect();g2T.push('🌲');g2S+=5;document.getElementById('s2').innerText=g2S;showEmoji('🌲');}
         
+        // Game 3
         let g3R=false,g3S=0,g3I=[];
         const c3=document.getElementById('g3'),ct3=c3.getContext('2d');
         function start3(){g3R=true;g3S=0;g3I=[];document.getElementById('s3').innerText='0';add3();loop3();}
-        function add3(){g3I.push({x:Math.random()*80,y:Math.random()*50,icon:'🧴'});}
-        function loop3(){if(!g3R)return;ct3.fillStyle='#0077b6';ct3.fillRect(0,0,110,80);g3I.forEach(o=>{ct3.font='14px Arial';ct3.fillText(o.icon,o.x,o.y+12);});requestAnimationFrame(loop3);}
-        c3.onclick=e=>{if(!g3R)return;const r=c3.getBoundingClientRect();g3I=g3I.filter(o=>{const d=Math.sqrt((e.clientX-r.left-o.x)**2+(e.clientY-r.top-o.y)**2);if(d<12){g3S+=10;document.getElementById('s3').innerText=g3S;addOcean();showEmoji('✓');return false}return true});}
+        function add3(){g3I.push({x:Math.random()*60,y:Math.random()*40,icon:'🧴'});}
+        function loop3(){if(!g3R)return;ct3.fillStyle='#0077b6';ct3.fillRect(0,0,90,60);g3I.forEach(o=>{ct3.font='12px Arial';ct3.fillText(o.icon,o.x,o.y+10);});requestAnimationFrame(loop3);}
+        c3.onclick=e=>{if(!g3R)return;const r=c3.getBoundingClientRect();g3I=g3I.filter(o=>{const d=Math.sqrt((e.clientX-r.left-o.x)**2+(e.clientY-r.top-o.y)**2);if(d<10){g3S+=10;document.getElementById('s3').innerText=g3S;addOcean();showEmoji('✓');return false}return true});}
         
+        // Game 4
         let g4R=false,g4S=0,g4L=[];
         const c4=document.getElementById('g4'),ct4=c4.getContext('2d');
         function start4(){g4R=true;g4S=0;g4L=[];document.getElementById('s4').innerText='0';for(let i=0;i<2;i++)add4();loop4();}
-        function add4(){g4L.push({x:Math.random()*70,y:Math.random()*50,on:true});}
-        function loop4(){if(!g4R)return;ct4.fillStyle='#222';ct4.fillRect(0,0,110,80);g4L.forEach(o=>{ct4.fillStyle=o.on?'#ffd700':'#444';ct4.beginPath();ct4.arc(o.x+8,o.y+8,8,0,Math.PI*2);ct4.fill();});if(g4L.filter(o=>o.on).length<2&&Math.random()<0.02)g4L[Math.floor(Math.random()*g4L.length)].on=true;requestAnimationFrame(loop4);}
-        c4.onclick=e=>{if(!g4R)return;const r=c4.getBoundingClientRect();g4L.forEach(o=>{const d=Math.sqrt((e.clientX-r.left-o.x-8)**2+(e.clientY-r.top-o.y-8)**2);if(d<10&&o.on){o.on=false;g4S+=10;document.getElementById('s4').innerText=g4S;addEnergy();showEmoji('⚡');}});}
+        function add4(){g4L.push({x:Math.random()*60,y:Math.random()*40,on:true});}
+        function loop4(){if(!g4R)return;ct4.fillStyle='#222';ct4.fillRect(0,0,90,60);g4L.forEach(o=>{ct4.fillStyle=o.on?'#f1c40f':'#444';ct4.beginPath();ct4.arc(o.x+6,o.y+6,6,0,Math.PI*2);ct4.fill();});if(g4L.filter(o=>o.on).length<2&&Math.random()<0.02)g4L[Math.floor(Math.random()*g4L.length)].on=true;requestAnimationFrame(loop4);}
+        c4.onclick=e=>{if(!g4R)return;const r=c4.getBoundingClientRect();g4L.forEach(o=>{const d=Math.sqrt((e.clientX-r.left-o.x-6)**2+(e.clientY-r.top-o.y-6)**2);if(d<8&&o.on){o.on=false;g4S+=10;document.getElementById('s4').innerText=g4S;addEnergy();showEmoji('⚡');}});}
     </script>
 </body>
 </html>
