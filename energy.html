@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewable Energy - Save the Earth</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(180deg, #0a3d0a 0%, #062106 100%); min-height: 100vh; color: white; }
+        header { background: rgba(0,0,0,0.95); padding: 15px 20px; position: fixed; width: 100%; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+        nav a { color: #fff; text-decoration: none; font-size: 16px; padding: 12px 20px; border-radius: 25px; transition: all 0.3s; background: rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; }
+        nav a:hover { background: #27ae60; transform: scale(1.05); }
+        .container { max-width: 900px; margin: 0 auto; padding: 100px 20px 50px; }
+        h1 { text-align: center; font-size: 36px; margin-bottom: 40px; color: #2ecc71; }
+        .section { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 30px; margin-bottom: 30px; }
+        .section h2 { color: #ffd700; margin-bottom: 20px; font-size: 24px; }
+        .section p { color: #ccc; line-height: 1.8; font-size: 16px; }
+        .energy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .energy-card { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 25px; text-align: center; }
+        .energy-card .icon { font-size: 60px; margin-bottom: 15px; }
+        .energy-card h3 { color: #2ecc71; margin-bottom: 10px; }
+        .energy-card.renewable { border: 2px solid #2ecc71; }
+        .energy-card.non-renewable { border: 2px solid #e74c3c; }
+        .vs-box { text-align: center; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 15px; margin: 30px 0; }
+        .vs-box h3 { font-size: 32px; margin-bottom: 20px; }
+        .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .pros-cons { list-style: none; }
+        .pros-cons li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; }
+        .pros-cons li:before { content: "✓"; color: #2ecc71; }
+        .cons li:before { content: "✗"; color: #e74c3c; }
+        footer { background: rgba(0,0,0,0.8); padding: 30px; text-align: center; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="games.html">🎮 Games</a>
+            <a href="quiz.html">❓ Quiz</a>
+            <a href="energy.html" style="background:#27ae60;">⚡ Energy</a>
+            <a href="about.html">ℹ️ About</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h1>⚡ Renewable vs Non-Renewable Energy</h1>
+        
+        <div class="section">
+            <h2>What's the Difference?</h2>
+            <p><strong>Renewable energy</strong> comes from sources that don't run out - like sunlight, wind, and water. <strong>Non-renewable energy</strong> comes from fossil fuels that will eventually run out - like coal, oil, and natural gas.</p>
+        </div>
+        
+        <div class="energy-grid">
+            <div class="energy-card renewable">
+                <div class="icon">☀️</div>
+                <h3>Renewable Energy</h3>
+                <p>Energy from sources that naturally replenish and won't run out.</p>
+            </div>
+            <div class="energy-card non-renewable">
+                <div class="icon">⛽</div>
+                <h3>Non-Renewable Energy</h3>
+                <p>Energy from fossil fuels that take millions of years to form.</p>
+            </div>
+        </div>
+        
+        <div class="vs-box">
+            <h3>⚔️ Renewable vs Non-Renewable</h3>
+            <div class="comparison">
+                <div class="section">
+                    <h2 style="color:#2ecc71;">✅ Renewable</h2>
+                    <ul class="pros-cons">
+                        <li>Never runs out</li>
+                        <li>Clean - no pollution</li>
+                        <li>Low operating costs</li>
+                        <li>Good for the planet</li>
+                        <li>Available everywhere</li>
+                        <li>Creates jobs</li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <h2 style="color:#e74c3c;">❌ Non-Renewable</h2>
+                    <ul class="pros-cons cons">
+                        <li>Will run out someday</li>
+                        <li>Causes pollution</li>
+                        <li>Expensive to maintain</li>
+                        <li>Bad for health</li>
+                        <li>Creates climate change</li>
+                        <li>Finite resources</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🌞 Types of Renewable Energy</h2>
+            <div class="energy-grid" style="margin-top:20px;">
+                <div class="energy-card">
+                    <div class="icon">☀️</div>
+                    <h3>Solar</h3>
+                    <p>Energy from sunlight using solar panels.</p>
+                </div>
+                <div class="energy-card">
+                    <div class="icon">🌬️</div>
+                    <h3>Wind</h3>
+                    <p>Energy from wind using wind turbines.</p>
+                </div>
+                <div class="energy-card">
+                    <div class="icon">💧</div>
+                    <h3>Hydro</h3>
+                    <p>Energy from flowing water in dams.</p>
+                </div>
+                <div class="energy-card">
+                    <div class="icon">🌋</div>
+                    <h3>Geothermal</h3>
+                    <p>Heat from beneath the Earth's surface.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 What You Can Do</h2>
+            <p>• Switch to a green energy provider</p>
+            <p>• Install solar panels if possible</p>
+            <p>• Use energy-efficient appliances</p>
+            <p>• Support renewable energy policies</p>
+            <p>• Reduce your energy consumption</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>🌍 Save the Earth Project © 2026</p>
+    </footer>
+</body>
+</html>
